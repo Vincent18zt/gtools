@@ -34,10 +34,54 @@ func (g *Gmap) ContainsValueWithoutType(value interface{}) bool {
 		switch value.(type) {
 		case string:
 			if isDigit, _ := regexp.MatchString(pattern, value.(string)); isDigit {
-				v1, _ := strconv.ParseFloat(v.(string), 64)
+				var v1 float64
 				v2, _ := strconv.ParseFloat(value.(string), 64)
-				if v1 == v2 {
-					return true
+				switch v.(type) {
+				case bool:
+					d := int(v2) / 1 % 10
+					b1 := digitToBool(d)
+					if b1 == v.(bool) {
+						return true
+					}
+				case string:
+					if v.(string) == value.(string) {
+						return true
+					}
+				case int8:
+					v1 = float64(v.(int8))
+					if v1 == v2 {
+						return true
+					}
+				case int16:
+					v1 = float64(v.(int16))
+					if v1 == v2 {
+						return true
+					}
+				case int32:
+					v1 = float64(v.(int32))
+					if v1 == v2 {
+						return true
+					}
+				case int:
+					v1 = float64(v.(int))
+					if v1 == v2 {
+						return true
+					}
+				case int64:
+					v1 = float64(v.(int64))
+					if v1 == v2 {
+						return true
+					}
+				case float32:
+					v1 = float64(v.(float32))
+					if v1 == v2 {
+						return true
+					}
+				case float64:
+					v1 = v.(float64)
+					if v1 == v2 {
+						return true
+					}
 				}
 			} else if strings.ToLower(v.(string)) == strings.ToLower(value.(string)) {
 				return true
