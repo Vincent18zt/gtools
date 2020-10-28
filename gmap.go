@@ -43,19 +43,244 @@ func (g *Gmap) ContainsValueWithoutType(value interface{}) bool {
 				return true
 			}
 		case int8:
+			var v1, v2 float64
 			switch v.(type) {
 			case bool:
-
-			case int8:
-				v1 := float64(v.(int8))
-				v2 := float64(value.(int8))
-				if v1 == v2 {
+				d := value.(int8) / 1 % 10
+				b1 := digitToBool(d)
+				if b1 == v.(bool) {
 					return true
 				}
+			case int8:
+				v1 = float64(v.(int8))
+				v2 = float64(value.(int8))
+			case int16:
+				v1 = float64(v.(int16))
+				v2 = float64(value.(int8))
+			case int:
+				v1 = float64(v.(int))
+				v2 = float64(value.(int8))
+			case int32:
+				v1 = float64(v.(int32))
+				v2 = float64(value.(int8))
+			case int64:
+				v1 = float64(v.(int64))
+				v2 = float64(value.(int8))
+			case float32:
+				v1 = float64(v.(float32))
+				v2 = float64(value.(int8))
+			case float64:
+				v1 = v.(float64)
+				v2 = float64(value.(int8))
 			}
-
+			if v1 == v2 {
+				return true
+			}
+		case int16:
+			var v1, v2 float64
+			switch v.(type) {
+			case bool:
+				d := value.(int16) / 1 % 10
+				b1 := digitToBool(d)
+				if b1 == v.(bool) {
+					return true
+				}
+			case int8:
+				v1 = float64(v.(int8))
+				v2 = float64(value.(int16))
+			case int16:
+				v1 = float64(v.(int16))
+				v2 = float64(value.(int16))
+			case int:
+				v1 = float64(v.(int))
+				v2 = float64(value.(int16))
+			case int32:
+				v1 = float64(v.(int32))
+				v2 = float64(value.(int16))
+			case int64:
+				v1 = float64(v.(int64))
+				v2 = float64(value.(int16))
+			case float32:
+				v1 = float64(v.(float32))
+				v2 = float64(value.(int16))
+			case float64:
+				v1 = v.(float64)
+				v2 = float64(value.(int16))
+			}
+			if v1 == v2 {
+				return true
+			}
+		case int:
+			var v1, v2 float64
+			switch v.(type) {
+			case bool:
+				d := value.(int) / 1 % 10
+				b1 := digitToBool(d)
+				if b1 == v.(bool) {
+					return true
+				}
+			case int8:
+				v1 = float64(v.(int8))
+				v2 = float64(value.(int))
+			case int16:
+				v1 = float64(v.(int16))
+				v2 = float64(value.(int))
+			case int:
+				v1 = float64(v.(int))
+				v2 = float64(value.(int))
+			case int32:
+				v1 = float64(v.(int32))
+				v2 = float64(value.(int))
+			case int64:
+				v1 = float64(v.(int64))
+				v2 = float64(value.(int))
+			case float32:
+				v1 = float64(v.(float32))
+				v2 = float64(value.(int))
+			case float64:
+				v1 = v.(float64)
+				v2 = float64(value.(int))
+			}
+			if v1 == v2 {
+				return true
+			}
+		case int32:
+			var v1, v2 float64
+			switch v.(type) {
+			case bool:
+				d := value.(int32) / 1 % 10
+				b1 := digitToBool(d)
+				if b1 == v.(bool) {
+					return true
+				}
+			case int8:
+				v1 = float64(v.(int8))
+				v2 = float64(value.(int32))
+			case int16:
+				v1 = float64(v.(int16))
+				v2 = float64(value.(int32))
+			case int:
+				v1 = float64(v.(int))
+				v2 = float64(value.(int32))
+			case int32:
+				v1 = float64(v.(int32))
+				v2 = float64(value.(int32))
+			case int64:
+				v1 = float64(v.(int64))
+				v2 = float64(value.(int32))
+			case float32:
+				v1 = float64(v.(float32))
+				v2 = float64(value.(int32))
+			case float64:
+				v1 = v.(float64)
+				v2 = float64(value.(int32))
+			}
+			if v1 == v2 {
+				return true
+			}
+		case int64:
+			var v1, v2 float64
+			switch v.(type) {
+			case bool:
+				d := value.(int64) / 1 % 10
+				b1 := digitToBool(d)
+				if b1 == v.(bool) {
+					return true
+				}
+			case int8:
+				v1 = float64(v.(int8))
+				v2 = float64(value.(int64))
+			case int16:
+				v1 = float64(v.(int16))
+				v2 = float64(value.(int64))
+			case int:
+				v1 = float64(v.(int))
+				v2 = float64(value.(int64))
+			case int32:
+				v1 = float64(v.(int32))
+				v2 = float64(value.(int64))
+			case int64:
+				v1 = float64(v.(int64))
+				v2 = float64(value.(int64))
+			case float32:
+				v1 = float64(v.(float32))
+				v2 = float64(value.(int64))
+			case float64:
+				v1 = v.(float64)
+				v2 = float64(value.(int64))
+			}
+			if v1 == v2 {
+				return true
+			}
+		case float32:
+			var v1, v2 float64
+			switch v.(type) {
+			case bool:
+				d := int(value.(float32)) / 1 % 10
+				b1 := digitToBool(d)
+				if b1 == v.(bool) {
+					return true
+				}
+			case int8:
+				v1 = float64(v.(int8))
+				v2 = float64(value.(float32))
+			case int16:
+				v1 = float64(v.(int16))
+				v2 = float64(value.(float32))
+			case int:
+				v1 = float64(v.(int))
+				v2 = float64(value.(float32))
+			case int32:
+				v1 = float64(v.(int32))
+				v2 = float64(value.(float32))
+			case int64:
+				v1 = float64(v.(int64))
+				v2 = float64(value.(float32))
+			case float32:
+				v1 = float64(v.(float32))
+				v2 = float64(value.(float32))
+			case float64:
+				v1 = v.(float64)
+				v2 = float64(value.(float32))
+			}
+			if v1 == v2 {
+				return true
+			}
+		case float64:
+			var v1, v2 float64
+			switch v.(type) {
+			case bool:
+				d := int(value.(float64)) / 1 % 10
+				b1 := digitToBool(d)
+				if b1 == v.(bool) {
+					return true
+				}
+			case int8:
+				v1 = float64(v.(int8))
+				v2 = value.(float64)
+			case int16:
+				v1 = float64(v.(int16))
+				v2 = value.(float64)
+			case int:
+				v1 = float64(v.(int))
+				v2 = value.(float64)
+			case int32:
+				v1 = float64(v.(int32))
+				v2 = value.(float64)
+			case int64:
+				v1 = float64(v.(int64))
+				v2 = value.(float64)
+			case float32:
+				v1 = float64(v.(float32))
+				v2 = value.(float64)
+			case float64:
+				v1 = v.(float64)
+				v2 = value.(float64)
+			}
+			if v1 == v2 {
+				return true
+			}
 		case bool:
-			// todo if v is digit
 			switch v.(type) {
 			case bool:
 				if v.(bool) == value.(bool) {
@@ -69,17 +294,122 @@ func (g *Gmap) ContainsValueWithoutType(value interface{}) bool {
 				if b1 == value.(bool) {
 					return true
 				}
+			case int8:
+				d := v.(int8) / 1 % 10
+				b1 := digitToBool(d)
+				if b1 == value.(bool) {
+					return true
+				}
+			case int16:
+				d := v.(int16) / 1 % 10
+				b1 := digitToBool(d)
+				if b1 == value.(bool) {
+					return true
+				}
+			case int32:
+				d := v.(int32) / 1 % 10
+				b1 := digitToBool(d)
+				if b1 == value.(bool) {
+					return true
+				}
+			case int:
+				d := v.(int) / 1 % 10
+				b1 := digitToBool(d)
+				if b1 == value.(bool) {
+					return true
+				}
+			case int64:
+				d := v.(int64) / 1 % 10
+				b1 := digitToBool(d)
+				if b1 == value.(bool) {
+					return true
+				}
+			case float32:
+				d := int(v.(float32)) / 1 % 10
+				b1 := digitToBool(d)
+				if b1 == value.(bool) {
+					return true
+				}
+			case float64:
+				d := int(v.(float64)) / 1 % 10
+				b1 := digitToBool(d)
+				if b1 == value.(bool) {
+					return true
+				}
 			}
-
 		case map[string]interface{}:
-			if v == value {
-				return true
+			switch v.(type) {
+			case map[string]interface{}:
+				var equal = true
+				for k, v1 := range value.(map[string]interface{}) {
+					if _, ok := v.(map[string]interface{})[k]; !ok {
+						equal = false
+					}
+					if v1 != v.(map[string]interface{})[k] {
+						equal = false
+					}
+				}
+				if equal {
+					return true
+				}
 			}
 		case []string:
-			if v == value {
-				return true
+			switch v.(type) {
+			case []string:
+				var equal = true
+				for i := range value.([]string) {
+					var exist = false
+					for j := range v.([]string) {
+						if value.([]string)[i] == v.([]string)[j] {
+							exist = true
+						}
+					}
+					if !exist {
+						equal = false
+					}
+				}
+				if equal {
+					return true
+				}
 			}
 		}
 	}
 	return false
+}
+
+func digitToBool(d interface{}) bool {
+	var b1 bool
+	switch d.(type) {
+	case int8:
+		if d.(int8) == 0 {
+			b1 = false
+		} else {
+			b1 = true
+		}
+	case int16:
+		if d.(int16) == 0 {
+			b1 = false
+		} else {
+			b1 = true
+		}
+	case int32:
+		if d.(int32) == 0 {
+			b1 = false
+		} else {
+			b1 = true
+		}
+	case int:
+		if d.(int) == 0 {
+			b1 = false
+		} else {
+			b1 = true
+		}
+	case int64:
+		if d.(int64) == 0 {
+			b1 = false
+		} else {
+			b1 = true
+		}
+	}
+	return b1
 }
