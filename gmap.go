@@ -1,6 +1,7 @@
 package gtools
 
 import (
+	"encoding/json"
 	"regexp"
 	"strconv"
 	"strings"
@@ -419,6 +420,11 @@ func (g *Gmap) ContainsValueWithoutType(value interface{}) bool {
 		}
 	}
 	return false
+}
+
+func (g *Gmap) ToString() string {
+	bytes, _ := json.Marshal(g.M)
+	return string(bytes)
 }
 
 func digitToBool(d interface{}) bool {
